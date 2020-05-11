@@ -16,8 +16,7 @@ pipeline
             {
                 withAWS(credentials: 'ec2', region: 'us-east-1') 
                 {
-                    sh '{
-  "AWSTemplateFormatVersion" : "2010-09-09",
+                    sh '  "AWSTemplateFormatVersion" : "2010-09-09",
 
   "Description" : "AWS CloudFormation Sample Template EC2InstanceWithSecurityGroupSample: Create an Amazon EC2 instance running the Amazon Linux AMI. The AMI is chosen based on the region in which the stack is run. This example creates an EC2 security group for the instance to give you SSH access. **WARNING** This template creates an Amazon EC2 instance. You will be billed for the AWS resources used if you create a stack from this template.",
 
@@ -135,8 +134,7 @@ pipeline
       "Description" : "Public IP address of the newly created EC2 instance",
       "Value" : { "Fn::GetAtt" : [ "EC2Instance", "PublicIp" ] }
     }
-  }
-}'
+  }'
                 }                
             }
         }
