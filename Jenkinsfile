@@ -12,12 +12,17 @@ pipeline
         }
         stage ('create working dir')
         {
+            input
+            {
+                'please provide stack name'
+                parameter {string(name:'stackname', defaultValue: 'stack', description: 'stack name for EC2 instance')}
+            }
             steps 
             {
                 withAWS(credentials: 'ec2', region: 'us-east-1') 
                 {
                     sh "aws cloudformation create-stack --stack-name EC2-instance --template-body file://ec2_inst.json --region 'us-east-1'"
-		}                
+		            }                
             }
         }
     }
