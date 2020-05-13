@@ -15,7 +15,7 @@ pipeline
             input
             {
                 message 'please provide stack name'
-                parameter {string(name:'stackname', defaultValue: 'stack', description: 'stack name for EC2 instance')}
+                parameters {string(name:'stackname', defaultValue: 'stack', description: 'stack name for EC2 instance')}
             }
             steps 
             {
